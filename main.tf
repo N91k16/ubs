@@ -12,3 +12,12 @@ resource "azurerm_resource_group" "rgblock" {
   name     = "rg-pune"
   location = "eastus"
 }
+
+
+resource "azurerm_storage_account" "storage" {
+  name                     = "storagepune"
+  resource_group_name      = azurerm_resource_group.rgblock.name
+  location                 = azurerm_resource_group.rgblock.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
