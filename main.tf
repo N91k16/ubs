@@ -14,20 +14,4 @@ resource "azurerm_resource_group" "rgblock" {
 }
 
 
-<<<<<<< HEAD
-=======
-resource "azurerm_storage_account" "storage" {
-  name                     = "storagepune"
-  resource_group_name      = azurerm_resource_group.rgblock.name
-  location                 = azurerm_resource_group.rgblock.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-}
 
-
-resource "azurerm_storage_container" "container" {
-  name                  = "containerpune"
-  storage_account_name  = azurerm_storage_account.storage.name
-  container_access_type = "private"
-}
->>>>>>> a178a3e96c629756c710dd89edf73d5254c696b5
