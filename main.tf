@@ -21,3 +21,10 @@ resource "azurerm_storage_account" "storage" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+
+
+resource "azurerm_storage_container" "container" {
+  name                  = "containerpune"
+  storage_account_name  = azurerm_storage_account.storage.name
+  container_access_type = "private"
+}
